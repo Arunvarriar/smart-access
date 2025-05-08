@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+schedules:
+- cron: "0 1 * * *"
+  displayName: Update License
+  always: true
+  branches:
+    include:
+    - master
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: PowerShell@2
+  inputs:
+    filePath: 'UpdateAllLicenses.ps1'
+    arguments: '$(organisation) $(PAT) $(operation)'
