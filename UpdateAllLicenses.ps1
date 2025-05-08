@@ -79,6 +79,7 @@ function GetUserId ($userEmail){
 
 
 }
+
 try{
 
     $getApprovedUsersUrl= "https://extmgmt.dev.azure.com/$accountName/_apis/ExtensionManagement/InstalledExtensions/arunvarriar/smartacesss-license-manager/Data/Scopes/Default/Current/Collections/UserList/Documents/b730c0cf-0398-4dfc-b8f7-60f8bac7cab7"
